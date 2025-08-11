@@ -1,0 +1,24 @@
+cff-version: 1.0.1
+message: Sistema para planejamento de viagens
+title: Mochileiros
+authors:
+  - family-names: Ortega Acerbi
+    given-names: Ariel
+  - family-names: Gontijo de Castro
+    given-names: Isabela 
+  - family-names: Ferreira Amorim 
+    given-names: Pedro Henrique
+  - family-names: Rodrigues Silva de Oliveira
+    given-names: Thiago    
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Nunes Bezerra
+    given-names: Sinaide
+keywords:
+  - viagens
+  - mochileiros
+  - gastos
+repository-code: https://github.com/ICEI-PUCMinas-PSG-SI-TI/PSG-SI-2025-1-P5-TIAS-6428101-mochileiros
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2024-06-26
