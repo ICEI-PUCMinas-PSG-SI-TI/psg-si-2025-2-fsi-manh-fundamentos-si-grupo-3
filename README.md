@@ -1,5 +1,5 @@
 # Informações do Projeto de Extensão
-`TÍTULO DO PROJETO`:  
+`TÍTULO DO PROJETO`:  Saboreie
 
  `DISCIPLINA`: Fundamentos de Sistemas de Informação
 
@@ -10,10 +10,12 @@
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
+- Cesar Rogério Lopes Júnior
+- Kauã Felipe Soares Silva
+- Lucas Alaane Mesquita de Araújo
+- Samuel Vasconcelos Rocha
+- Vinicius Henrique Antônio Oliveira
 
-> Inclua a lista dos membros da equipe com seus nomes completos.
 
 # Estrutura do Projeto
 
