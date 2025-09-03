@@ -30,52 +30,53 @@ _(Caso os alunos identifiquem a necessidade de incluir novas perguntas, podem fa
 
 ### 1. Sobre o Entrevistado
 
-**Nome:**  
-**Cargo/função:**  
-**Tempo na empresa:**  
+*Nome: Kenia*  
+*Cargo/função: Sócia/ Vice Gerente*  
+*Tempo na empresa: 6 anos*  
 
 ---
 
 ### 2. Sobre a Empresa
 
-**Qual o principal produto ou serviço prestado?**  
-_Resposta:_  
+*Qual o principal produto ou serviço prestado?*  
+Alimentação- Almoço 
 
-**Quantos funcionários atuam atualmente?**  
-_Resposta:_  
+*Quantos funcionários atuam atualmente?*  
+4
 
-**Há algum sistema utilizado para controle interno? Qual?**  
-_Resposta:_  
+*Há algum sistema utilizado para controle interno? Qual?*  
+Sim. Consumer
 
 ---
 
 ### 3. Processos Atuais
 
-**Como é feito o controle de processos (ex: estoque, vendas, agendamento)?**  
-_Resposta:_  
+*Como é feito o controle de processos (ex: estoque, vendas, agendamento)?*  
+Pelo sistema utilizado pela empresa
 
-**Quais ferramentas são utilizadas atualmente? (papel, planilhas, sistemas...)**  
-_Resposta:_  
-
----
+*Quais ferramentas são utilizadas atualmente? (papel, planilhas, sistemas...)*  
+Planilhas 
+Sistema 
+Sistema máquina cartão 
+Anotações -
 
 ### 4. Dores e Dificuldades
 
-**Quais tarefas consomem mais tempo ou causam retrabalho?**  
-_Resposta:_  
+*Quais tarefas consomem mais tempo ou causam retrabalho?*  
+Controle caixa
 
-**Há ocorrência de erros ou desperdícios? Em quais situações?**  
-_Resposta:_  
+*Há ocorrência de erros ou desperdícios? Em quais situações?*  
+Sim. Pedidos errados, atrasos na entrega.
 
 ---
 
 ### 5. Expectativas
 
-**Que tipo de solução poderia facilitar o seu dia a dia?**  
-_Resposta:_  
+*Que tipo de solução poderia facilitar o seu dia a dia?*  
+Recebimento de pedidos automatizado com pagamento.
 
-**Já foi feita alguma tentativa anterior de resolver esse problema?**  
-_Resposta:_  
+*Já foi feita alguma tentativa anterior de resolver esse problema?*  
+Sim.
 
 ---
 
@@ -91,7 +92,11 @@ _Após a realização da entrevista, as informações serão analisadas para ide
 > - Qual impacto esperado para a empresa/parceiro
 
 ---
-## _✏️Coloque aqui o SEU TEXTO_ 
+## _✏️
+Após a entrevista com a responsável do restaurante, percebeu-se que os principais problemas são pedidos duplicados ou esquecidos, atrasos nas entregas e dificuldades no controle do caixa, devido ao uso de planilhas e anotações manuais.
+Para resolver isso, propõe-se um sistema web de pedidos e entregas, com recebimento automatizado de pedidos e pagamento online, permitindo acompanhar cada pedido em tempo real e gerar relatórios simples de vendas e produtos mais pedidos.
+O usuário principal será o responsável pelo gerenciamento do restaurante, enquanto a equipe de cozinha e os entregadores terão acesso às informações que precisam para preparar e entregar os pedidos corretamente.
+Espera-se que o sistema reduza erros, agilize o atendimento e facilite a gestão diária, melhorando a experiência dos clientes e da equipe.
 
 
 ---
