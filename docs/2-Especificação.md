@@ -12,11 +12,26 @@ Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a>
 **Profissão:** Analista de Marketing  
 **Perfil:** Mariana é casada, tem uma rotina corrida e adora praticidade. Costuma fazer compras online para economizar tempo, principalmente de roupas e produtos eletrônicos. Dá muita importância a avaliações de outros clientes antes de finalizar uma compra e prefere lojas que oferecem frete rápido e políticas de devolução facilitadas. Atualmente, está buscando um site confiável para comprar um novo smartphone com um bom custo-benefício.
 
-**Persona 2**  
-*(Preencha com a descrição detalhada da segunda persona do seu projeto)*
+**Persona 2**
 
-**Persona 3**  
-*(Preencha com a descrição detalhada da segunda persona do seu projeto)*
+**Nome:** Juliana Martins
+**Idade:** 24 anos
+**Profissão:** Estudante de Design
+**Perfil:** Juliana é solteira, mora sozinha e adora pedir comida por delivery, principalmente quando está estudando para provas ou fazendo trabalhos. Valoriza aplicativos rápidos e fáceis de usar, que mostrem fotos dos pratos e permitam acompanhar o status do pedido em tempo real. Prefere opções de pagamento online para evitar contato na entrega. Atualmente, procura um restaurante que ofereça boas opções de comida saudável com entrega rápida na região.
+
+**Persona 3**
+
+**Nome:** Paulo Henrique Souza
+**Idade:** 38 anos
+**Profissão:** Motorista de Aplicativo
+**Perfil:** Paulo passa boa parte do dia na rua e costuma pedir comida durante suas corridas, seja para almoçar no carro ou levar para casa no fim do expediente. Para ele, o mais importante é a praticidade e o tempo de entrega. Prefere restaurantes que oferecem combos com bom custo-benefício e promoções frequentes. No momento, procura um restaurante que entregue refeições completas e saborosas de forma rápida para sua região.
+
+**Persona 4**
+
+**Nome:** Helena Duarte
+**Idade:** 47 anos
+**Profissão:** Empresária
+**Perfil:** Helena trabalha em home office e costuma pedir comida para ela e para a família. Dá bastante valor a restaurantes que oferecem variedade no cardápio, incluindo opções vegetarianas e sobremesas. Também gosta de poder agendar pedidos com antecedência para receber no horário do almoço. Atualmente, busca um restaurante que combine qualidade, boas avaliações e atendimento eficiente no delivery.
 
 
 ---
