@@ -7,28 +7,19 @@ Nesta seção, apresente as principais telas da plataforma e explique como a int
 
 ## 3.1 Wireframes
 
-### O que são wireframes?
-
-Wireframes são protótipos simples que representam a estrutura e o layout básico de um site ou aplicação web, destacando os elementos essenciais da interface e a organização das páginas.
-
-### Exemplo de Wireframes
-🗑️ _[Esta seção deve ser apagada e substituída pelos seus exemplos de wireframes ou mockups]_
-
-![Exemplo de Wireframe](images/wireframe-example.png)
-
 ## Wireframes por Tela
 
 ### Tela 1 – Login
 
-- Descrição breve da tela e sua função  
-- Como atende aos requisitos (ex: segurança no login, usabilidade, etc.)  
-- (Imagem)
+- Tela onde os usuários efetuam o login para utilizar o sistema, sejam eles profissionais, usuários comuns ou administradores.
+- Login, segurança no login, usabilidade.  
+- <img src="images/Login.jpg">
 
-### Tela 2 – Página Principal
+### Tela 2 – Cadastro de usuário
 
-- Descrição breve da tela e sua função  
-- Relação com requisitos funcionais (ex: exibe produtos, permite busca, etc.)  
-- (Imagem)
+- Tela onde os usuários criam uma conta para utilizar o sistema, caso não tenham uma. 
+- Cadastro de usuários, segurança, usabilidade. 
+- <img src="images/Cadastro.jpg">
 
 ### Tela 3 – Carrinho de Compras
 
