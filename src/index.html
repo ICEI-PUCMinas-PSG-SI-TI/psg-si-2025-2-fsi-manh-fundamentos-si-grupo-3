@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante - Carrinho de Compras</title>
+    <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+    
+<div class="container">
+    <!-- Aba de produtos -->
+    <div class="produtos">
+      <h1>Produtos</h1>
+  
+      <div class="produto">
+        <div class="produto-img" style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046753.png');"></div>
+        <div class="produto-info">
+          <div class="produto-nome">Quatro Queijos (G)</div>
+          <div class="produto-preco">R$ 28,00</div>
+        </div>
+        <button class="botao-adicionar" onclick="adicionarAoCarrinho('Quatro Queijos (G)', 28, 'https://cdn-icons-png.flaticon.com/512/1046/1046753.png')">Adicionar</button>
+      </div>
+  
+      <div class="produto">
+        <div class="produto-img" style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046762.png');"></div>
+        <div class="produto-info">
+          <div class="produto-nome">Calabresa (M)</div>
+          <div class="produto-preco">R$ 25,00</div>
+        </div>
+        <button class="botao-adicionar" onclick="adicionarAoCarrinho('Calabresa (M)', 25, 'https://cdn-icons-png.flaticon.com/512/1046/1046762.png')">Adicionar</button>
+      </div>
+  
+      <div class="produto">
+        <div class="produto-img" style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046830.png');"></div>
+        <div class="produto-info">
+          <div class="produto-nome">Portuguesa (P)</div>
+          <div class="produto-preco">R$ 23,00</div>
+        </div>
+        <button class="botao-adicionar" onclick="adicionarAoCarrinho('Portuguesa (P)', 23, 'https://cdn-icons-png.flaticon.com/512/1046/1046830.png')">Adicionar</button>
+      </div>
+    </div>
+  
+    <!-- Carrinho -->
+    <div id="carrinho-container" class="carrinho-container oculto">
+      <h2>Suas Comidas</h2>
+      <ul id="itens-carrinho"></ul>
+  
+      <hr />
+  
+      <div class="resumo">
+        <label for="subtotal">Subtotal</label>
+        <span id="subtotal">R$ 0,00</span>
+      </div>
+      <div class="resumo">
+        <label for="desconto">Desconto</label>
+        <span id="desconto">R$ 0,00</span>
+      </div>
+  
+      <div class="total">
+        <span>Total</span>
+        <span id="total">R$ 0,00</span>
+      </div>
+  
+      <button class="finalizar-btn" onclick="finalizarCompra()">Finalizar a compra</button>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

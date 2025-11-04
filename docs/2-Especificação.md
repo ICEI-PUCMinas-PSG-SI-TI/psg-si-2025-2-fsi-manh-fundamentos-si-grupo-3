@@ -26,6 +26,11 @@ Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a>
 **Profissão:** Empresária
 **Perfil:** Helena trabalha em home office e costuma pedir comida para ela e para a família. Dá bastante valor a restaurantes que oferecem variedade no cardápio, incluindo opções vegetarianas e sobremesas. Também gosta de poder agendar pedidos com antecedência para receber no horário do almoço. Atualmente, busca um restaurante que combine qualidade, boas avaliações e atendimento eficiente no delivery.
 
+**Persona 4**  
+**Nome:** Mariana Souza  
+**Idade:** 32 anos  
+**Profissão:** Analista de Marketing  
+**Perfil:** Mariana é casada, tem uma rotina corrida e adora praticidade. Costuma fazer compras online para economizar tempo, principalmente de roupas e produtos eletrônicos. Dá muita importância a avaliações de outros clientes antes de finalizar uma compra e prefere lojas que oferecem frete rápido e políticas de devolução facilitadas. Atualmente, está buscando um site confiável para comprar um novo smartphone com um bom custo-benefício.
 
 ---
 #### ⚠️ **ATENÇÃO**
