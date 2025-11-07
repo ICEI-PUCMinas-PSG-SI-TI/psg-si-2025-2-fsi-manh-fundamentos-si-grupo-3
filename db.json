@@ -1,0 +1,32 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Quatro Queijos (G)",
+      "preco": 28,
+      "quantidade": 10,
+      "imagem": "https://cdn-icons-png.flaticon.com/512/1046/1046753.png"
+    },
+    {
+      "id": "2",
+      "nome": "Calabresa (M)",
+      "preco": 25,
+      "quantidade": 8,
+      "imagem": "https://cdn-icons-png.flaticon.com/512/1046/1046762.png"
+    },
+    {
+      "nome": "Portuguesa (P)",
+      "preco": 23,
+      "quantidade": 5,
+      "imagem": "https://cdn-icons-png.flaticon.com/512/1046/1046830.png",
+      "id": "3"
+    },
+    {
+      "id": "f866",
+      "nome": "A moda (M)",
+      "preco": 32,
+      "quantidade": 4,
+      "imagem": "https://i.ytimg.com/vi/-3y-bwwHgrU/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE4gVihlMA8=&rs=AOn4CLCFUBCC6JXapmHb01jx0UlM7deZfQ"
+    }
+  ]
+}

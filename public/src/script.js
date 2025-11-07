@@ -1,6 +1,39 @@
 let carrinho = [];
   let desconto = 0;
 
+  async function carregarProdutosDisponiveis() {
+  const API = "http://localhost:3000/produtos";
+  try {
+    const res = await fetch(API);
+    const produtos = await res.json();
+
+    const container = document.getElementById("lista-produtos");
+    if (!container) return;
+
+    container.innerHTML = "";
+    produtos.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "produto";
+
+      div.innerHTML = `
+        <img class="produto-img" src="${p.imagem}" alt="${p.nome}">
+        <div class="produto-info">
+          <div class="produto-nome">${p.nome}</div>
+          <div class="produto-preco">R$ ${p.preco.toFixed(2).replace('.', ',')}</div>
+        </div>
+        <button class="botao-adicionar" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco}, '${p.imagem}')">Adicionar</button>
+      `;
+
+      container.appendChild(div);
+    });
+  } catch (err) {
+    console.error("Erro ao carregar produtos:", err);
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", carregarProdutosDisponiveis);
+
   function adicionarAoCarrinho(nome, preco, imagem) {
     const itemExistente = carrinho.find(item => item.nome === nome);
     if (itemExistente) {

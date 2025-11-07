@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante - Carrinho de Compras</title>
+    <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+    
+<div class="container">
+    <!-- Aba de produtos -->
+    <div class="produtos">
+      <h1>Produtos</h1>
+  
+      <section id="produtos">
+  <h2>Produtos disponíveis</h2>
+  <div id="lista-produtos" class="produtos-container"></div>
+</section>  
+    
+    <!-- Carrinho -->
+    <div id="carrinho-container" class="carrinho-container oculto">
+      <h2>Suas Comidas</h2>
+      <ul id="itens-carrinho"></ul>
+  
+      <hr />
+  
+      <div class="resumo">
+        <label for="subtotal">Subtotal</label>
+        <span id="subtotal">R$ 0,00</span>
+      </div>
+      <div class="resumo">
+        <label for="desconto">Desconto</label>
+        <span id="desconto">R$ 0,00</span>
+      </div>
+  
+      <div class="total">
+        <span>Total</span>
+        <span id="total">R$ 0,00</span>
+      </div>
+  
+      <button class="finalizar-btn" onclick="finalizarCompra()">Finalizar a compra</button>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
