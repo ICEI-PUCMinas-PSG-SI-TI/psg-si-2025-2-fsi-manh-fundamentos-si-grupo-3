@@ -1,0 +1,187 @@
+
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(170, 24, 24);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.badge-mode { font-size: .85rem; }
+.empty-state { padding: 1rem; }
+.table thead th[data-sort] { cursor: pointer; user-select: none; }
+.table thead th[data-sort].asc::after { content:"  \25BE"; }  /* ▾ */
+.table thead th[data-sort].desc::after { content:"  \25B4"; } /* ▴ */
+header h1{
+  margin: 0;
+  font-size: 47px;
+}
+
+header h2{
+  margin: 0;
+  font-size: 36px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(170, 24, 24);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cadastro{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+  padding: 16px;
+  margin: 16px auto 96px; /* espaço pro footer fixo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+  background-color: #f49dad;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.cadastro .form-group { width: 100%; }
+.cadastro .form-actions { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+.cadastro button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 240px;
+  background-color: rgb(19, 140, 19);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+
+.cadastro button:hover { background-color: rgb(15, 120, 15); }
+.cadastro button:active { transform: translateY(1px) scale(0.998); box-shadow: 0 1px 0 rgba(0,0,0,0.12); }
+.cadastro button:focus-visible { outline: 3px solid rgba(19,140,19,0.22); outline-offset: 3px; }
+
+.cadastro input,
+.cadastro select,
+.cadastro textarea {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 10px;
+  border: 1px solid #e0bfc6;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+header{
+bottom: 0;
+width: 100%;
+font-size: 16px;
+}
+
+
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+
+.cadastro{
+box-sizing: border-box;
+width: 100%;
+max-width: 360px;
+padding: 16px;
+margin: 16px auto 96px; /* espaço pro footer fixo */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 12px;
+border: 2px solid whitesmoke;
+border-radius: 8px;
+background-color: #f49dad;
+color: #111;
+font-size: 18px;
+font-weight: 600;
+box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+
+.cadastro .form-group { width: 100%; }
+.cadastro .form-actions { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+
+.cadastro button {
+-webkit-appearance: none;
+appearance: none;
+width: 100%;
+max-width: 240px;
+background-color: rgb(19, 140, 19);
+color: #ffffff;
+font-size: 16px;
+font-weight: 700;
+border: none;
+border-radius: 6px;
+padding: 10px 14px;
+cursor: pointer;
+transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+
+
+.cadastro button:hover { background-color: rgb(15, 120, 15); }
+.cadastro button:active { transform: translateY(1px) scale(0.998); box-shadow: 0 1px 0 rgba(0,0,0,0.12); }
+.cadastro button:focus-visible { outline: 3px solid rgba(19,140,19,0.22); outline-offset: 3px; }
+
+
+.cadastro input,
+.cadastro select,
+.cadastro textarea {
+width: 100%;
+max-width: 320px;
+padding: 8px 10px;
+border: 1px solid #e0bfc6;
+border-radius: 6px;
+background: #fff;
+color: #111;
+font-size: 15px;
+box-sizing: border-box;
+}
+
+
