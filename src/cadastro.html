@@ -202,8 +202,7 @@
       listar();
     })();
   </script>
-</body>
-</html>
+
 
 
 <!DOCTYPE html>
@@ -212,17 +211,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./cadastro.css" />
-  <title>Cadastro - Pizzaria Nonna</title>
-</head>
+  <title>Cadastro - Saboreie</title>
+  <style>
+    .site-header {
+      display: flex !important;          /* coloca os filhos na horizontal */
+      align-items: start !important;    /* alinha verticalmente imagem e texto */              /* espaço entre imagem e texto */
+    }
+    .header-text{
+      margin-left: -49px;
+    }
+    .header-text h1 {
+      margin: 0 !important;             /* remove margem padrão do h1 */
+    }
+
+    .header-text p {
+      margin: 0 !important;              /* remove margem do p */
+      font-size: 16px !important;        /* ajusta subtítulo se quiser */
+    }
+
+    footer{
+      height: 20vh;
+      margin-top: 15%;
+    }
+
+  </style>
+</head> 
 <body>
-  <header class="site-header">
-    <h1>Pizzaria Nonna</h1>
+<header class="site-header">
+  <img src="../docs/images/delivery-de-marmitex-caseiro-no-patio-iporanga-removebg-preview.png" style="width: 70px; height: 50px; margin: 0;" alt="Logo" id="logo">
+  <div class="header-text">
+    <h1>Saboreie</h1>
     <p class="subtitle">Cadastre-se para ter acesso ao nosso serviço</p>
-  </header>
+  </div>
+</header>
 
-  <img src="istockphoto-521403691-612x612.jpg" width="220" height="120" alt="Pizza saindo do forno" />
-
-  <main>
+  <main style="margin-top: 20vh;">
     <form class="cadastro" id="cadastroForm" novalidate>
       <div class="form-group">
         <label for="nome">Nome Completo</label>
@@ -231,7 +254,7 @@
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="seu email" />
+        <input type="email" id="email" name="email" required placeholder="Seu email" />
       </div>
 
       <div class="form-group">
@@ -251,7 +274,8 @@
 
       <div class="form-group">
         <label>
-          <input type="checkbox" id="termos" name="termos" /> Aceito os termos de uso
+          <input type="checkbox" id="termos" name="termos" /> 
+          <p style="margin-left: 20%;">Aceito os termos de uso</p>
         </label>
       </div>
 
@@ -264,7 +288,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Pizzaria Nonna. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Saboreie | Todos os direitos reservados.</p>
   </footer>
 
   <script>
