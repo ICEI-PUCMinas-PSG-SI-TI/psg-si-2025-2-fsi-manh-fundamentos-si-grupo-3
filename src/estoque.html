@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Controle de Estoque</title>
+  <link rel="stylesheet" href="estoque.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+      .form-control:focus {
+        box-shadow: 0 0 0 0.15rem rgba(255, 111, 0, 0.5) !important;
+        border-color: rgb(193, 84, 0) !important;
+      }
+      .btn-voltar {
+        background: linear-gradient(90deg, #ff4612, #ff9c2b );
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <button class="btn btn-voltar" onclick="window.location.href = 'index.html'">&#8592; Início</button>
+    </div>
+    <h1>Controle de Estoque</h1>
+    <button id="btnAdicionar">+ Adicionar Produto</button>
+                    <div class="d-flex flex-column flex-md-row gap-2 align-items-md-center">
+                    <div class="input-group">
+                        <span class="input-group-text">Busca</span>
+                        <input id="search" type="search" class="form-control" placeholder="Pesquisar produto por característica" />
+                    </div>
+                    <div class="ms-md-auto d-flex gap-2">
+                        <button id="btnRecarregar" class="btn btn-outline-secondary">Recarregar</button>
+                    </div>
+                </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Imagem</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-produtos"></tbody>
+    </table>
+  </div>
+
+  <script src="estoque.js"></script>
+</body>
+</html>

@@ -10,12 +10,23 @@
         box-shadow: 0 0 0 0.15rem rgba(255, 111, 0, 0.5) !important;
         border-color: rgb(193, 84, 0) !important;
         }
+        .btn-voltar {
+            background: linear-gradient(90deg, #ff4612, #ff9c2b );
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
 
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
         <div class="container">
+            <div class="d-flex justify-content-between align-items-center p-3">
+                <button class="btn btn-voltar" onclick="window.location.href = 'index.html'">&#8592; Início</button>
+            </div>
             <a class="navbar-brand fw-bold" href="#">Administração • Usuários</a>
             <div class="ms-auto">
                 <span id="modeBadge" class="badge text-bg-secondary badge-mode">Modo: Local (localStorage)</span>
@@ -109,7 +120,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
-                    <button class="btn btn-primary" type="submit" id="btnSalvar">Salvar</button>
+                    <button style="background-color: rgb(236, 101, 17); color: rgb(255, 255, 255);" class="btn" type="submit" id="btnSalvar">Salvar</button>
                 </div>
             </form>
         </div>

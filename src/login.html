@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Saboreie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .dark-mode {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+
+        .large-font p,
+        .large-font li,
+        .large-font a,
+        .large-font h1,
+        .large-font h2,
+        .large-font h3,
+        .large-font h4,
+        .large-font h5,
+        .large-font span,
+        .large-font label,
+        .large-font button {
+            font-size: 1.5em !important;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0;
+            right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 28px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #3700b3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+
+        .slider.round {
+            border-radius: 28px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .btn-voltar {
+    background: linear-gradient(90deg, #ff4612, #ff9c2b );
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+
+    </style>
+</head>
+
+    <div class="d-flex justify-content-between align-items-center p-3">
+    
+    <button class="btn btn-voltar" onclick="history.back()">&#8592; Voltar</button>
+
+    <div class="d-flex align-items-center gap-3">
+        <label class="switch mb-0">
+            <input type="checkbox" id="modonoturno" />
+            <!--<span class="slider round"></span>-->
+        </label>
+        <img id="fonteacessivel" 
+            src="../docs/images/aces1.png" 
+            alt="Acessibilidade" 
+            title="Acessibilidade" 
+            style="cursor: pointer; width: 40px; height: 40px;" />
+    </div>
+</div>
+    
+    <div class="container">
+        <div class="login-box">
+            <a href="index.html">
+            <img src="../docs/images/delivery-de-marmitex-caseiro-no-patio-iporanga-removebg-preview.png" width="200px" style="cursor: pointer;">
+            </a>
+            <div class="login-options">
+
+                <div class="login-option">
+                    <button class="login-btn">
+                        <span>LOGIN CLIENTE</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="entrar-container">
+                        <button class="entrar-btn" onclick="window.location.href='loginusuario.html'">Login</button>
+                        <button class="entrar-btn" onclick="window.location.href='cadastro.html'">Cadastrar</button>
+                    </div>
+                </div>
+
+                <div class="login-option">
+                    <button class="login-btn">
+                        <span>LOGIN FUNCIONÁRIO</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="entrar-container">
+                        <button class="entrar-btn" onclick="window.location.href='loginusuario.html'">Login</button>
+                    </div>
+                </div>
+
+                <div class="login-option">
+                    <button class="login-btn">
+                        <span>LOGIN ADMINISTRADOR</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="entrar-container">
+                        <button class="entrar-btn" onclick="window.location.href='loginusuario.html'">Login</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="site-name">SABOREIE</div>
+        </div>
+    </div>
+
+    <script>
+        const darkToggle = document.getElementById("modonoturno");
+        const fontBtn = document.getElementById("fonteacessivel");
+
+        /*function updateFontIcon(darkMode) {
+            fontBtn.src = darkMode 
+                ? "imgsviolencia/aces2.png" 
+                : "imgsviolencia/aces1.png";
+        }*/
+
+        window.onload = () => {
+            const darkMode = localStorage.getItem("darkMode") === "true";
+            const largeFont = localStorage.getItem("largeFont") === "true";
+
+            //if (darkMode) {
+              //  document.body.classList.add("dark-mode");
+                //darkToggle.checked = true;
+           // }
+
+            if (largeFont) {
+                document.body.classList.add("large-font");
+            }
+
+
+            //updateFontIcon(darkMode);
+        };
+
+        darkToggle.addEventListener("change", function () {
+            const isDark = this.checked;
+            document.body.classList.toggle("dark-mode", isDark);
+            localStorage.setItem("darkMode", isDark);
+            updateFontIcon(isDark);
+        });
+
+        fontBtn.addEventListener("click", function () {
+            const isLarge = document.body.classList.toggle("large-font");
+            localStorage.setItem("largeFont", isLarge);
+        });
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>

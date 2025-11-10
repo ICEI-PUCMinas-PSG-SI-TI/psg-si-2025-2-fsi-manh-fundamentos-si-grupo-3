@@ -63,5 +63,5 @@ form.addEventListener('submit', (e) => {
     form.reset();
     alert('Cadastro realizado com sucesso!');
     // Redireciona para o painel do administrador
-    window.location.href = 'adimi.html';
+    window.location.href = 'index.html';
 });
