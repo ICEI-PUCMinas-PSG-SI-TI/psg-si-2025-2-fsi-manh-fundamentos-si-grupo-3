@@ -11,10 +11,12 @@
 
 | Categoria             | Tecnologia/Ferramenta | Justificativa de uso |
 |-----------------------|------------------------|----------------------|
+| Linguagem             | HTML                   | Estrutura do front-end. |
+| Linguagem             | CSS                    | Estilização do sistema. |
 | Linguagem             | JavaScript             | Implementação das funcionalidades do front-end. |
-| Framework Front-end   | React.js               | Criação de interfaces dinâmicas e reutilizáveis. |
-| Banco de Dados        | MySQL                  | Armazenamento e gerenciamento de dados. |
-| Ferramenta de Design  | Figma                  | Criação de protótipos e wireframes. |
+| Framework Front-end   | Bootstrap              | Facilidade para manipular elementos front-end de forma responsiva. |
+| "Banco de Dados"      | Local Storage          | Banco de dados simulado. Armazenamento e gerenciamento de dados. |
+| Ferramenta de Design  | Canva                  | Criação de protótipos e wireframes. |
 | IDE                   | VS Code                | Ambiente principal de desenvolvimento. |
 
 ---
@@ -28,9 +30,15 @@
 
 | Requisito/Tela                | Status | Última atualização | Próxima entrega |
 |--------------------------------|--------|--------------------|-----------------|
-| Tela principal                 | 🟢 Concluída     | 10/08/2025         | -               |
-| Tela de login                  | 🟡 Em andamento | 09/08/2025         | 15/08/2025      |
-| Tela de cadastro de produto    | 🔴 Não iniciada | -                  | 20/08/2025      |
+| Tela inicial                 | 🟡 Em andamento    | 10/11/2025         | 01/12/2025               |
+| Tela inicial de login                  | 🟢 Concluído | 09/11/2025         | 01/12/2025      |
+| Tela de login                  | 🟢 Concluído | 09/11/2025         | 01/12/2025      |
+| Tela de cadastro de usuário    | 🟢 Concluído | 09/11/2025         | 01/12/2025      |
+| Tela de controle de estoque    | 🟡 Em andamento | 09/11/2025         | 01/12/2025      |
+| Tela de controle da administração    | 🟢 Concluído | 09/11/2025         | 01/12/2025      |
+| Tela do carrinho               | 🟡 Em andamento | 04/11/2025         | 01/12/2025      |
+
+
 
 Legenda: 🟢 Concluído | 🟡 Em andamento | 🔴 Não iniciado
 
@@ -66,6 +74,7 @@ Legenda: 🟢 Concluído | 🟡 Em andamento | 🔴 Não iniciado
 3. Descrever brevemente as funcionalidades implementadas ou mudanças feitas desde a última atualização.
 
 📌 **Objetivo**: Esta seção deve permitir que o professor visualize rapidamente **o que já foi entregue, o que está em andamento e o que ainda falta desenvolver**, garantindo acompanhamento eficaz do projeto.
+
 
 
 
