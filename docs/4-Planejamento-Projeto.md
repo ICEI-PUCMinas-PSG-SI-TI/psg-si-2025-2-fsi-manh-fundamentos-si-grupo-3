@@ -131,10 +131,11 @@ _O grupo poderá usar esta parte para informar a professora quais tarefas estão
 
 | Responsável | Função no Grupo | Tarefa | Início | Prazo | Status | Entrega |
 |-------------|------------------|--------|--------|--------|--------|---------|
-| AlunoY | Front-end Dev | Iniciar tela de login e home | 09/09 | 17/09 | ❌ | — |
-| AlunoK | Back-end Dev | Criar estrutura de banco de dados e rotas básicas | 10/09 | 20/09 | ❌ | — |
-| AlunaZ | Testes | Realizar testes iniciais de funcionalidades básicas | 18/09 | 24/09 | ❌ | — |
-| AlunaX (Líder) | Apresentação | Organizar slides e conduzir apresentação parcial | 25/09 | 30/09 | ❌ | — |
+| Cesar Rogério (líder) | Front-end Dev e scrum master | Iniciar tela inicial | 09/11 | 10/11 | ✔️ | 10/11 |
+| Kauã Felipe | Front-end Dev | Supervisão geral e criar telas de login | 09/11 | 10/11 | ✔️ | 09/11 |
+| Lucas Alaane | Front-end Dev | Criar controle de estoque | 07/11 | 10/11 | ✔️ |07/11  |
+| Samuel Vasconcelos | Front-end Dev | Organizar slides e criar carrinho | 04/11 | 10/11 | ✔️ | 04/11 |
+| Vinícius | Front-end Dev | Criar tela adm e cadastro de usuário | 06/11 | 10/11 | ✔️ | 06/11 |
 
 ---
 
