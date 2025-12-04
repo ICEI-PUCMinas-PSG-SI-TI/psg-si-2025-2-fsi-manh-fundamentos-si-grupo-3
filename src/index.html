@@ -135,22 +135,112 @@
 
   <script>
     const dados = {
-      menu: [
-        { nome: "Feijoada", estrelas: 5, img: "imgs/feijoada.webp", preco: 25.00 },
-        { nome: "Picanha", estrelas: 5, img: "imgs/picanha.webp", preco: 40.00 },
-        { nome: "Pizza", estrelas: 4, img: "imgs/pizza.webp", preco: 30.00 }
-      ],
-      populares: [
-        { nome: "Coxinha de Frango", estrelas: 5, img: "imgs/coxinha.webp", preco: 5.00 },
-        { nome: "Pastel de Carne", estrelas: 4, img: "imgs/paste.webp", preco: 6.50 },
-        { nome: "Moqueca de Peixe", estrelas: 5, img: "imgs/moqueca.jpg", preco: 35.00 }
-      ],
-      promocoes: [
-        { nome: "Salmão Grelhado", estrelas: 5, img: "imgs/salmao.jpg", preco: 50.00 },
-        { nome: "Brigadeiro Gourmet", estrelas: 5, img: "imgs/brigadeiro.jpg", preco: 8.00 },
-        { nome: "Bowl de Açaí", estrelas: 4, img: "imgs/açai.jpg", preco: 15.00 }
+  menu: [
+    { 
+      nome: "Feijoada", 
+      estrelas: 5, 
+      img: "imgs/feijoada.webp", 
+      preco: 25.00,
+      ingredientes: [
+        { nome: "Feijão", quantidade: 10 },  // Ex.: 10 kg/unidades por porção
+        { nome: "Carne de porco", quantidade: 5 },
+        { nome: "Arroz", quantidade: 2 }
       ]
-    };
+    },
+    { 
+      nome: "Picanha", 
+      estrelas: 5, 
+      img: "imgs/picanha.webp", 
+      preco: 40.00,
+      ingredientes: [
+        { nome: "Picanha", quantidade: 1 },  // 1 kg por porção
+        { nome: "Sal", quantidade: 0.1 },
+        { nome: "Pimenta", quantidade: 0.05 }
+      ]
+    },
+    { 
+      nome: "Pizza", 
+      estrelas: 4, 
+      img: "imgs/pizza.webp", 
+      preco: 30.00,
+      ingredientes: [
+        { nome: "Massa de pizza", quantidade: 1 },
+        { nome: "Queijo", quantidade: 0.5 },
+        { nome: "Tomate", quantidade: 2 }
+      ]
+    }
+  ],
+  populares: [
+    { 
+      nome: "Coxinha de Frango", 
+      estrelas: 5, 
+      img: "imgs/coxinha.webp", 
+      preco: 5.00,
+      ingredientes: [
+        { nome: "Frango", quantidade: 0.2 },
+        { nome: "Massa", quantidade: 0.1 },
+        { nome: "Óleo", quantidade: 0.05 }
+      ]
+    },
+    { 
+      nome: "Pastel de Carne", 
+      estrelas: 4, 
+      img: "imgs/paste.webp", 
+      preco: 6.50,
+      ingredientes: [
+        { nome: "Carne moída", quantidade: 0.3 },
+        { nome: "Massa de pastel", quantidade: 0.1 },
+        { nome: "Cebola", quantidade: 0.1 }
+      ]
+    },
+    { 
+      nome: "Moqueca de Peixe", 
+      estrelas: 5, 
+      img: "imgs/moqueca.jpg", 
+      preco: 35.00,
+      ingredientes: [
+        { nome: "Peixe", quantidade: 0.5 },
+        { nome: "Coco", quantidade: 0.2 },
+        { nome: "Azeite de dendê", quantidade: 0.1 }
+      ]
+    }
+  ],
+  promocoes: [
+    { 
+      nome: "Salmão Grelhado", 
+      estrelas: 5, 
+      img: "imgs/salmao.jpg", 
+      preco: 50.00,
+      ingredientes: [
+        { nome: "Salmão", quantidade: 0.4 },
+        { nome: "Limão", quantidade: 0.1 },
+        { nome: "Ervas", quantidade: 0.05 }
+      ]
+    },
+    { 
+      nome: "Brigadeiro Gourmet", 
+      estrelas: 5, 
+      img: "imgs/brigadeiro.jpg", 
+      preco: 8.00,
+      ingredientes: [
+        { nome: "Chocolate", quantidade: 0.2 },
+        { nome: "Leite condensado", quantidade: 0.3 },
+        { nome: "Manteiga", quantidade: 0.1 }
+      ]
+    },
+    { 
+      nome: "Bowl de Açaí", 
+      estrelas: 4, 
+      img: "imgs/açai.jpg", 
+      preco: 15.00,
+      ingredientes: [
+        { nome: "Açaí", quantidade: 0.5 },
+        { nome: "Banana", quantidade: 1 },
+        { nome: "Granola", quantidade: 0.2 }
+      ]
+    }
+  ]
+};
 
     function starStr(n) { return "★".repeat(Math.max(0, Math.min(5, n))); }
 

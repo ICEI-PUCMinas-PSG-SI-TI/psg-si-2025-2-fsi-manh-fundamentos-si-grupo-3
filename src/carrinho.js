@@ -1,6 +1,51 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let desconto = 0;
 
+// Função para carregar estoque do localStorage (inicializa com valores padrão se vazio)
+function carregarEstoque() {
+  let estoque = JSON.parse(localStorage.getItem('estoque')) || {};
+  // Inicializa estoque com valores padrão se vazio (baseado nos ingredientes dos dados)
+  if (Object.keys(estoque).length === 0) {
+    // Exemplo: define estoques iniciais (ajuste conforme necessário)
+    estoque = {
+      "Feijão": 100,
+      "Carne de porco": 50,
+      "Arroz": 30,
+      "Picanha": 20,
+      "Sal": 10,
+      "Pimenta": 5,
+      "Massa de pizza": 15,
+      "Queijo": 25,
+      "Tomate": 40,
+      "Frango": 30,
+      "Massa": 20,
+      "Óleo": 10,
+      "Carne moída": 25,
+      "Massa de pastel": 15,
+      "Cebola": 20,
+      "Peixe": 15,
+      "Coco": 10,
+      "Azeite de dendê": 8,
+      "Salmão": 12,
+      "Limão": 30,
+      "Ervas": 5,
+      "Chocolate": 20,
+      "Leite condensado": 15,
+      "Manteiga": 10,
+      "Açaí": 25,
+      "Banana": 50,
+      "Granola": 15
+    };
+    salvarEstoque(estoque);
+  }
+  return estoque;
+}
+
+// Função para salvar estoque no localStorage
+function salvarEstoque(estoque) {
+  localStorage.setItem('estoque', JSON.stringify(estoque));
+}
+
 function adicionarAoCarrinho(nome, preco, imagem) {
   const itemExistente = carrinho.find(item => item.nome === nome);
   if (itemExistente) {
@@ -48,7 +93,7 @@ function atualizarCarrinho() {
   if (carrinho.length === 0) {
     container.classList.add('oculto');
     vazioMsg.classList.remove('oculto');
-    ocultarCarrinho(); // Fecha automaticamente se vazio
+    ocultarCarrinho();
     return;
   } else {
     container.classList.remove('oculto');
@@ -106,17 +151,57 @@ function atualizarCarrinho() {
 }
 
 function finalizarCompra() {
-  if (carrinho.length === 0) {  // Corrigido: 'cart' para 'carrinho'
-    alert('Seu carrinho está vazio!');  // Mantém alerta simples, consistente com o resto
-    return;  // Impede continuar se vazio
+  if (carrinho.length === 0) {
+    alert('Seu carrinho está vazio!');
+    return;
   } else {
+    // Carrega estoque
+    let estoque = carregarEstoque();
+    let alertasEstoque = [];
+
+    // Processa baixa nos ingredientes
+    carrinho.forEach(item => {
+      // Encontra o item original nos dados para acessar ingredientes
+      let itemOriginal = null;
+      for (let categoria in dados) {
+        itemOriginal = dados[categoria].find(it => it.nome === item.nome);
+        if (itemOriginal) break;
+      }
+      if (itemOriginal && itemOriginal.ingredientes) {
+        itemOriginal.ingredientes.forEach(ing => {
+          const quantidadeNecessaria = ing.quantidade * item.quantidade;
+          if (estoque[ing.nome] !== undefined) {
+            estoque[ing.nome] -= quantidadeNecessaria;
+            if (estoque[ing.nome] < 0) {
+              alertasEstoque.push(`${ing.nome} ficou com estoque negativo (${estoque[ing.nome].toFixed(2)}).`);
+            }
+          } else {
+            alertasEstoque.push(`Ingrediente ${ing.nome} não encontrado no estoque.`);
+          }
+        });
+      }
+    });
+
+    // Salva estoque atualizado
+    salvarEstoque(estoque);
+
+    // Calcula total e finaliza
     const totalFinal = carrinho.reduce((acc, item) => acc + (Number(item.preco) || 0) * item.quantidade, 0) - desconto;
     alert(`Compra finalizada! Total: R$ ${totalFinal.toFixed(2).replace('.', ',')}`);
+
+    // Mostra alertas de estoque se houver
+    if (alertasEstoque.length > 0) {
+      alert('Avisos de estoque:\n' + alertasEstoque.join('\n'));
+    }
+
     carrinho = [];
     salvarCarrinho();
-    atualizarCarrinho();  // Isso já chama ocultarCarrinho() se vazio
+    atualizarCarrinho();
   }
 }
 
 // Evento para fechar o painel
 document.getElementById('close-cart').addEventListener('click', ocultarCarrinho);
+
+// Carrega estoque ao iniciar (opcional, mas garante que esteja pronto)
+carregarEstoque();
