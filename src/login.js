@@ -17,6 +17,24 @@ document.querySelectorAll('.login-btn').forEach(btn => {
     });
 });
 
+ const switchBtn = document.getElementById("toggleDarkMode");
+
+  // Carregar modo salvo
+  if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark-mode");
+    switchBtn.checked = true;
+  }
+
+  // Alternar modo
+  switchBtn.addEventListener("change", () => {
+    if (switchBtn.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("tema", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("tema", "light");
+    }
+  });
     function CargaInicialAdm(){
         const usuario = {
             id: crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),

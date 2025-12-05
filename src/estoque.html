@@ -19,24 +19,83 @@
         font-weight: bold;
         transition: background 0.3s ease;
       }
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  z-index: 200;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5a00d4;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
   </style>
 </head>
 <body>
   <div class="container">
+    
     <div class="d-flex justify-content-between align-items-center p-3">
+      
       <button class="btn btn-voltar" onclick="window.location.href = 'index.html'">&#8592; Início</button>
+      
     </div>
+    <label class="switch" style="position:absolute; top:20px; right:20px;">
+  <input type="checkbox" id="toggleDarkMode">
+  <span class="slider"></span>
+</label>
     <h1>Controle de Estoque</h1>
     <button id="btnAdicionar">+ Adicionar Produto</button>
+    
                     <div class="d-flex flex-column flex-md-row gap-2 align-items-md-center">
                     <div class="input-group">
                         <span class="input-group-text">Busca</span>
                         <input id="search" type="search" class="form-control" placeholder="Pesquisar produto por característica" />
+                        
                     </div>
                     <div class="ms-md-auto d-flex gap-2">
+                      
                         <button id="btnRecarregar" class="btn btn-outline-secondary">Recarregar</button>
+                        
                     </div>
+                    
                 </div>
+
+                
 
     <table>
       <thead>

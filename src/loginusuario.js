@@ -58,3 +58,21 @@ document.addEventListener('DOMContentLoaded', function () {
         return [];
       }
     }
+
+      const switchBtn = document.getElementById("toggleDarkMode");
+
+  if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark-mode");
+    switchBtn.checked = true;
+  }
+
+  switchBtn.addEventListener("change", () => {
+    if (switchBtn.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("tema", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("tema", "light");
+    }
+  });
+

@@ -32,6 +32,24 @@ function updateProduto(id, atualizado) {
     setProdutos(produtos);
   }
 }
+ const switchBtn = document.getElementById("toggleDarkMode");
+
+  if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (switchBtn) switchBtn.checked = true;
+  }
+
+  if (switchBtn) {
+    switchBtn.addEventListener("change", () => {
+      if (switchBtn.checked) {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("tema", "dark");
+      } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("tema", "light");
+      }
+    });
+  }
 
 function deleteProduto(id) {
   const produtos = getProdutos().filter(p => p.id !== id);

@@ -50,6 +50,158 @@
       padding: 0;
     }
 
+    .btn-darkmode {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.btn-darkmode:hover {
+  opacity: 0.8;
+}
+
+.switch {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+/* Switch ativado */
+input:checked + .slider {
+  background-color: #5a00d4; /* roxo */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+/* ========================================
+   MODO ESCURO → azul + roxo
+==========================================*/
+.dark-mode {
+  background: #0d0d16 !important;
+  color: #e4e4e4 !important;
+}
+
+/* Navbar no modo escuro */
+.dark-mode .top-nav {
+  background: linear-gradient(90deg, #007bff, #5a00d4); /* AZUL → ROXO */
+}
+.dark-mode .delivery-msg {
+  color: #ffffff !important;
+}
+/* Botões no modo escuro */
+.dark-mode .btn-login,
+.dark-mode .btn-adm,
+.dark-mode .btn-estoque {
+  background: #3a0099;
+}
+
+/* footer modo escuro */
+.dark-mode footer {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+}
+
+/* Cards */
+.dark-mode .food-info {
+  background: #1b1b25 !important;
+  color: #eaeaea !important;
+}
+
+/* Carrinho */
+.dark-mode .cart-sidebar {
+  background: #1b1b25 !important;
+}
+
+.dark-mode input {
+  background: #242434 !important;
+  color: white !important;
+}
+
+.dark-mode .delivery-box {
+  background: #242434 !important;
+  border-color: #444 !important;
+}
+
     input#addressInput:-webkit-autofill,
     input#addressInput:-webkit-autofill:hover,
     input#addressInput:-webkit-autofill:focus,
@@ -76,7 +228,6 @@
       <div id="liPerfil"></div>
       <div id="liEstoque"></div>
     </div>
-    
 
 
   </header>
@@ -87,11 +238,24 @@
     </a>
   </div>-->
 
+ <label class="switch">
+      <input type="checkbox" id="toggleDarkMode">
+      <span class="slider"></span>
+    </label>
+
+
     <div class="cart-container">
     <a href="javascript:void(0)" class="cart-link" title="Abrir carrinho" onclick="mostrarCarrinho()">
       <img src="imgs/carrinho.png" alt="Carrinho" class="cart-icon">
     </a>
   </div>
+
+  <div class="delivery-box">
+  <i class="fa fa-map-marker"></i>
+  <input type="text" id="addressInput" placeholder="Digite seu endereço">
+</div>
+
+<p id="deliveryMsg" class="delivery-msg"></p>
 
   <main class="site-container">
 
@@ -138,6 +302,58 @@
 
 
   <script>
+     const switchBtn = document.getElementById("toggleDarkMode");
+
+  // Carrega o modo salvo
+  if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark-mode");
+    switchBtn.checked = true;
+  }
+
+  switchBtn.addEventListener("change", () => {
+    if (switchBtn.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("tema", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("tema", "light");
+    }
+  });
+
+     function salvarEndereco() {
+    const input = document.getElementById("addressInput");
+    const msg = document.getElementById("deliveryMsg");
+
+    const endereco = input.value.trim();
+
+    if (endereco === "") {
+      msg.textContent = "Digite um endereço válido.";
+      return;
+    }
+
+    // salva o endereço que o usuário digitou
+    localStorage.setItem("enderecoEntrega", endereco);
+
+    msg.innerHTML = ` Entregar em: <strong>${endereco}</strong>`;
+  }
+
+  // Para atualizar a mensagem quando a página abrir
+  window.addEventListener("load", () => {
+    const salvo = localStorage.getItem("enderecoEntrega");
+    if (salvo) {
+      document.getElementById("deliveryMsg").innerHTML =
+        ` Entregar em: <strong>${salvo}</strong>`;
+    }
+  });
+
+  // Quando o usuário parar de digitar por 500ms → salvar
+  let timer;
+  document.addEventListener("input", (e) => {
+    if (e.target.id === "addressInput") {
+      clearTimeout(timer);
+      timer = setTimeout(salvarEndereco, 500);
+    }
+  });
     const dados = {
       menu: [
 { 
@@ -145,6 +361,7 @@
     estrelas: 5,
     preco: 19.90,
     img: "imgs/feijoada.webp",
+    desc: "Feijão preto com carnes e tempero caseiro.",
     ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -152,6 +369,7 @@
     ]
   },
   { nome: "Picanha", estrelas: 5, img: "imgs/picanha.webp", preco: 74.90,
+  desc: "Carne macia, suculenta e grelhada no ponto.",
     ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -159,6 +377,7 @@
     ]
   },
   { nome: "Pizza", estrelas: 4, img: "imgs/pizza.webp", preco: 49.90,
+  desc: "Massa crocante com queijo e sabores clássicos.",
     ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -170,6 +389,7 @@
       populares: [
         
         { nome: "Coxinha de Frango", estrelas: 5, img: "imgs/coxinha.webp", preco: 3.90,
+        desc: "Crocante por fora e recheado com frango.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -177,12 +397,14 @@
     ]
          },
         { nome: "Pastel de Carne", estrelas: 4, img: "imgs/paste.webp", preco: 4.90,
+        desc: "Pastel sequinho com carne bem temperada.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
       { id: 3, quantidade: 0.2 }
     ]},
         { nome: "Moqueca de Peixe", estrelas: 5, img: "imgs/moqueca.jpg", preco: 34.90,
+        desc: "Peixe fresco cozido com leite de coco e temperos.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -191,12 +413,14 @@
       ],
       promocoes: [
                 { nome: "Salmão Grelhado", estrelas: 5, img: "imgs/salmao.jpg", preco: 32.90,
+                desc: "Salmão no ponto certo, leve e saboroso.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
       { id: 3, quantidade: 0.2 }
     ]},
         { nome: "Brigadeiro Gourmet", estrelas: 5, img: "imgs/brigadeiro.jpg", preco: 4.90, 
+        desc: "Brigadeiro cremoso feito com chocolate premium.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -204,6 +428,7 @@
     ]
          },
         { nome: "Bowl de Açaí", estrelas: 4, img: "imgs/açai.jpg", preco: 16.90,
+        desc: "Açaí cremoso com frutas e granola.",
           ingredientes: [
       { id: 1, quantidade: 0.5 }, 
       { id: 2, quantidade: 0.3 },
@@ -225,7 +450,7 @@
       </div>
       <div class="food-info">
         <div class="food-title">${item.nome}</div>
-        <div class="food-sub">Descrição curta</div>
+        <div class="food-sub">${item.desc}</div>
         <div class="stars">${starStr(item.estrelas)}</div>
         <div class="food-meta">
           <div class="price">R$ ${(item.preco || 0).toFixed(2)}</div>
@@ -249,32 +474,10 @@
 
   </script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-
   <script>
-    function initAutocomplete() {
-      const input = document.getElementById("addressInput");
-      const msg = document.getElementById("deliveryMsg");
+  
 
-      const autocomplete = new google.maps.places.Autocomplete(input, {
-        componentRestrictions: { country: "br" },
-        fields: ["formatted_address", "geometry"],
-      });
-
-      input.addEventListener("keypress", (e) => {
-
-        e.stopImmediatePropagation();
-      });
-
-      autocomplete.addListener("place_changed", () => {
-        const place = autocomplete.getPlace();
-        if (!place || !place.formatted_address) {
-          msg.textContent = "Endereço inválido. Tente novamente.";
-          return;
-        }
-        msg.innerHTML = `📦 Entregar em: <strong>${place.formatted_address}</strong>`;
-      });
-    }
+      
 
     window.addEventListener("load", initAutocomplete);
   </script>

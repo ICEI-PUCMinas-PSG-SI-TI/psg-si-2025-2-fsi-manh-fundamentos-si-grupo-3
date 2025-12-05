@@ -25,11 +25,7 @@ if (usuarioCorrente.role === 'adm'){
 
     document.getElementById("liEstoque").innerHTML = visualEstoque;
 
-          
-
-
-
-        
+  
 
 };
 

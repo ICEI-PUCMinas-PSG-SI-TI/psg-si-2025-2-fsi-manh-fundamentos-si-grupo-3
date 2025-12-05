@@ -7,3 +7,99 @@ th,td{padding:10px;border-bottom:1px solid #e6e6e6;text-align:left}
 td img{width:48px;height:48px;object-fit:cover;border-radius:6px}
 button.editar{background:#007bff;color:#fff;padding:6px 8px;border-radius:6px;border:none;cursor:pointer}
 button.excluir{background:#e74c3c;color:#fff;padding:6px 8px;border-radius:6px;border:none;cursor:pointer}
+
+/* ============================================
+      MODO ESCURO — CONTROLE DE ESTOQUE
+============================================ */
+
+.dark-mode {
+  background: #0d0d16 !important;
+  color: #e4e4e4 !important;
+}
+
+/* Container principal */
+.dark-mode .container {
+  background: #1b1b25 !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4) !important;
+}
+
+/* Título */
+.dark-mode h1 {
+  color: #fff !important;
+}
+
+/* Botão voltar */
+.dark-mode .btn-voltar {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+  color: white !important;
+}
+
+/* Botão adicionar */
+.dark-mode #btnAdicionar {
+  background: #5a00d4 !important;
+}
+
+/* Input de busca */
+.dark-mode .form-control {
+  background: #242434 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .input-group-text {
+  background: #242434 !important;
+  border-color: #555 !important;
+  color: #fff !important;
+}
+
+.dark-mode .form-control:focus {
+  border-color: #8b5cff !important;
+  box-shadow: 0 0 0 0.15rem rgba(123, 62, 255, .5) !important;
+}
+
+/* Botão recarregar */
+.dark-mode .btn-outline-secondary {
+  color: #ddd !important;
+  border-color: #888 !important;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+
+/* Tabela */
+.dark-mode table {
+  color: #e4e4e4 !important;
+}
+
+.dark-mode thead tr {
+  background: #181824 !important;
+  color: #fff !important;
+  border-bottom-color: #333 !important;
+}
+
+.dark-mode tbody tr {
+  background: #20202d !important;
+}
+
+.dark-mode tbody tr:hover {
+  background: #2b2b3b !important;
+}
+
+/* Células */
+.dark-mode th,
+.dark-mode td {
+  border-color: #333 !important;
+}
+
+/* Botões da tabela */
+.dark-mode button.editar {
+  background: #007bff !important;
+}
+
+.dark-mode button.excluir {
+  background: #d62828 !important;
+}

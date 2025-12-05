@@ -136,6 +136,9 @@
 
     .price{ color:var(--primary); font-weight:700; font-size:1rem; }
 
+    .dark-mode .price{
+      color:#3b9aff;
+    }
     .site-footer{
       padding:32px;
       text-align:center;
@@ -254,6 +257,10 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+.dark-mode .cart-link {
+  background: linear-gradient(90deg, #007bff, #5a00d4);
+}
+
 .cart-link:hover {
   transform: scale(1.1);
 }
@@ -296,6 +303,10 @@
       padding: 6px;
     }
 
+    .dark-mode .botao-adicionar {
+      background: #0056b3;
+    }
+
     .botao-adicionar img {
       width: 20px;
       height: 20px;
@@ -315,6 +326,15 @@
       transform: translateX(100%);
       transition: transform 0.35s ease;
     }
+.dark-mode .cart-summary {
+  background: #1b1b25 !important;
+  border-top-color: #333 !important;
+  color: #ffffff
+}
+
+.dark-mode .cart-summary p {
+  color: #eaeaea !important;
+}
 
     .cart-sidebar:not(.oculto) {
       transform: translateX(0);
@@ -330,6 +350,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .dark-mode .cart-header {
+      background: linear-gradient(90deg, #007bff, #5a00d4);
     }
 
     .cart-header button {
@@ -381,6 +405,10 @@
       border-radius: 6px;
       font-size: 17px;
       cursor: pointer;
+    }
+
+    .dark-mode .quant-btn {
+      background: #0056b3;
     }
 
     .quant-input {

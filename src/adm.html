@@ -18,7 +18,186 @@
             font-weight: bold;
             transition: background 0.3s ease;
         }
+/* ===============================
+   SWITCH (BOTÃO DESLIZANTE)
+================================*/
+.switch {
+  position: absolute;
+  top: 90px;        /* ajuste conforme a página */
+  right: 20px;
+  width: 50px;
+  height: 24px;
+  z-index: 200;
+}
 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+/* Switch ativado */
+input:checked + .slider {
+  background-color: #5a00d4; /* roxo */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Fundo geral */
+.dark-mode {
+  background: #0d0d16 !important;
+  color: #e4e4e4 !important;
+}
+
+/* Navbar */
+.dark-mode .navbar {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+  border-color: #3a0099 !important;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .btn-voltar {
+  color: #ffffff !important;
+}
+
+.dark-mode .btn-voltar {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+}
+
+/* Cards */
+.dark-mode .card {
+  background: #1b1b25 !important;
+  color: #e4e4e4 !important;
+  border-color: #333 !important;
+}
+
+/* Inputs */
+.dark-mode .form-control,
+.dark-mode .input-group-text,
+.dark-mode select.form-control {
+  background: #242434 !important;
+  border-color: #555 !important;
+  color: #fff !important;
+}
+
+.dark-mode .form-control:focus {
+  border-color: #8b5cff !important;
+  box-shadow: 0 0 0 0.15rem rgba(123, 62, 255, .5) !important;
+}
+
+/* Tabela */
+.dark-mode table {
+  color: #e4e4e4 !important;
+}
+
+.dark-mode thead tr {
+  background: #181824 !important;
+  color: #fff !important;
+}
+
+.dark-mode tbody tr {
+  background: #20202d !important;
+}
+
+.dark-mode tbody tr:hover {
+  background: #2b2b3b !important;
+}
+
+/* Botões da tabela */
+.dark-mode .btn-outline-secondary {
+  color:white !important;
+  border-color: #888 !important;
+  background-color:#5a00d4 ;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background: #5a00d4 !important;
+  color: white !important;
+  border-color: #5a00d4 !important;
+}
+
+.dark-mode .btn-outline-danger {
+  color: #ff6b6b !important;
+  border-color: #ff6b6b !important;
+
+}
+
+.dark-mode .btn-outline-danger:hover {
+  background: #ff6b6b !important;
+  color: #000 !important;
+}
+
+/* Modal */
+.dark-mode .modal-content {
+  background: #1b1b25 !important;
+  color: #eee !important;
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+  border-color: #333 !important;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1);
+}
+
+/* Select */
+.dark-mode select {
+  background: #242434 !important;
+  color: white !important;
+}
+
+/* Paginação */
+.dark-mode .page-link {
+  background: #242434 !important;
+  color: #fff !important;
+  border-color: #3a3a3a !important;
+}
+
+.dark-mode .page-item.active .page-link {
+  background: #5a00d4 !important;
+  border-color: #5a00d4 !important;
+}
+
+/* Footer */
+.dark-mode footer {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+  color: white !important;
+}
+.dark-mode .btnNovo{
+    background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+}
+/* Switch */
+.dark-mode .slider {
+  background-color: #5a00d4 !important;
+}
     </style>
 </head>
 <body>
@@ -29,8 +208,12 @@
             </div>
             <a class="navbar-brand fw-bold" href="#">Administração • Usuários</a>
             <div class="ms-auto">
-                <span id="modeBadge" class="badge text-bg-secondary badge-mode">Modo: Local (localStorage)</span>
+                 <label class="switch">
+  <input type="checkbox" id="toggleDarkMode">
+  <span class="slider"></span>
             </div>
+           
+</label>
         </div>
     </nav>
 
@@ -44,7 +227,7 @@
                     </div>
                     <div class="ms-md-auto d-flex gap-2">
                         <button id="btnRecarregar" class="btn btn-outline-secondary">Recarregar</button>
-                        <button id="btnNovo" style="background-color: rgb(236, 101, 17); color: rgb(255, 255, 255);" class="btn ">Novo usuário</button>
+                        <button id="btnNovo" class= "btnNovo" style="background-color: rgb(236, 101, 17); color: rgb(255, 255, 255);" class="btn ">Novo usuário</button>
                     </div>
                 </div>
 
@@ -129,6 +312,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+         const switchBtn = document.getElementById("toggleDarkMode");
+
+  // Carregar modo salvo
+  if (localStorage.getItem("tema") === "dark") {
+    document.body.classList.add("dark-mode");
+    switchBtn.checked = true;
+  }
+
+  // Alternar modo
+  switchBtn.addEventListener("change", () => {
+    if (switchBtn.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("tema", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("tema", "light");
+    }
+  });
         // ========= Helpers =========
         const $ = (sel, root = document) => root.querySelector(sel);
         const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));

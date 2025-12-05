@@ -23,6 +23,87 @@
     font-weight: bold;
     transition: background 0.3s ease;
   }
+  /* ============================================
+      SWITCH (MESMO DAS OUTRAS PÁGINAS)
+============================================ */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 24px;
+  z-index: 200;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #5a00d4;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* ============================================
+      MODO ESCURO — LOGIN
+============================================ */
+.dark-mode {
+  background: #0d0d16 !important;
+  color: #e4e4e4 !important;
+}
+
+/* Card */
+.dark-mode .card {
+  background: #1b1b25 !important;
+  color: #fff !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+}
+
+/* Inputs */
+.dark-mode .form-control {
+  background: #242434 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+.dark-mode .form-control:focus {
+  border-color: #8b5cff !important;
+  box-shadow: 0 0 0 0.15rem rgba(123, 62, 255, .5) !important;
+}
+
+/* Botão login */
+.dark-mode .btn-roxo {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+  color: white !important;
+}
+
+/* Botão voltar */
+.dark-mode .btn-voltar {
+  background: linear-gradient(90deg, #007bff, #5a00d4) !important;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -30,7 +111,10 @@
   <div class="d-flex justify-content-between align-items-center p-3">
         <button class="btn btn-voltar" onclick="history.back()">&#8592; Voltar</button>
     </div>
-
+<label class="switch">
+  <input type="checkbox" id="toggleDarkMode">
+  <span class="slider"></span>
+</label>
 
   <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="width: 100%; max-width: 400px; background-color: #fbceb2ee;">
