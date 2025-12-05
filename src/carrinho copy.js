@@ -2,10 +2,6 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let desconto = 0;
 
 function adicionarAoCarrinho(item) {
-    if(!usuarioCorrente){
-    alert("Faça login para adicionar itens ao carrinho.");
-    return;
-  }
     const nome = item.nome;
     const preco = item.preco || 0;
     const img = item.img;
@@ -13,7 +9,7 @@ function adicionarAoCarrinho(item) {
   if (itemExistente) {
     itemExistente.quantidade++;
   } else {
-    carrinho.push({ nome, preco: Number(preco) || 0, quantidade: 1, img });
+    carrinho.push({ nome, preco: Number(preco) || 0, quantidade: 1, imagem });
   }
   salvarCarrinho();
   mostrarCarrinho();
@@ -88,7 +84,7 @@ function atualizarCarrinho() {
 
     const imgDiv = document.createElement('div');
     imgDiv.className = 'item-img';
-    imgDiv.style.backgroundImage = `url('${item.img}')`;
+    imgDiv.style.backgroundImage = `url('${item.imagem}')`;
 
     const nomeSpan = document.createElement('span');
     nomeSpan.className = 'item-nome';
@@ -133,25 +129,18 @@ function atualizarCarrinho() {
 }
 
 function finalizarCompra() {
-  if (carrinho.length === 0) {
-        alert("Carrinho vazio.");
-        return;
-    }
-  if(!usuarioCorrente){
-    alert("Faça login para efetuar o pedido.");
-    return;
-  }
-
-    descontarEstoque(carrinho); 
-
-    //carrinho = [];
-    salvarCarrinho();
-    //atualizarCarrinho();  // Isso já chama ocultarCarrinho() se vazio
-     ocultarCarrinho();
+  if (carrinho.length === 0) {  // Corrigido: 'cart' para 'carrinho'
+    alert('Seu carrinho está vazio!');  // Mantém alerta simples, consistente com o resto
+    return;  // Impede continuar se vazio
+  } else {
+    const totalFinal = carrinho.reduce((acc, item) => acc + (Number(item.preco) || 0) * item.quantidade, 0) - desconto;
+    // alert(`Compra finalizada! Total: R$ ${totalFinal.toFixed(2).replace('.', ',')}`); comentei para mandar para outra pagina
     window.location.href = 'checkout.html'
-
+    carrinho = [];
+    salvarCarrinho();
+    atualizarCarrinho();  // Isso já chama ocultarCarrinho() se vazio
   }
-
+}
 
 // Evento para fechar o painel
 document.getElementById('close-cart').addEventListener('click', ocultarCarrinho);

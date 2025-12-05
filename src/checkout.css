@@ -1,23 +1,134 @@
-body {
-    font-family: "Inter", sans-serif;
+*{margin: 0;}
+
+
+
+html, body {
+    height: 100%;
+        font-family: "Inter", Arial, sans-serif;
+
     background: #fafafa;
     margin: 0;
     padding: 0;
 }
 
-.top-nav {
+body {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px;
-    background: linear-gradient(90deg, #ff4612, #ff9c2b);
-    color: white;
+    flex-direction: column;
 }
 
-.top-nav .logo {
-    width: 60px;
-    height: 45px;
-    object-fit: contain;
+.container {
+    flex: 1;
+}
+
+
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, #ff4612, #ff9c2b);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    .top-nav h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .top-nav p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .top-nav img {
+      width: 70px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+        
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 18px;
+      background: linear-gradient(90deg, #ff4612, #ff9c2b );
+      color:white;
+      position: relative;
+    }
+
+
+
+    #logo{
+      width:90px;
+      height:70px;
+      object-fit:contain;
+    }
+
+    .subtitle{
+      margin:0;
+      font-size:14px;
+      opacity:.9;
+    }
+
+    
+.btn-login {
+  position: absolute;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #222;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-adm {
+  position: absolute;
+  right: 120px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-adm:hover {
+  background: #222;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-estoque {
+  position: absolute;
+  right: 280px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-estoque:hover {
+  background: #222;
+  text-decoration: none;
+  color: #fff;
 }
 
 .cart-list {
@@ -58,11 +169,41 @@ body {
     color: gray;
 }
 
-.footer {
-    margin-top: 40px;
-    text-align: center;
-    padding: 15px;
-    background: #f4f4f4;
-    color: #555;
-    font-size: 14px;
+#pagouBtn{
+    background: linear-gradient(90deg, #ff4612, #ff9c2b);
+    color: white;
+}
+
+#inputEndereco{
+    border-color: orange;
+}
+
+.form-control:focus {
+        box-shadow: 0 0 0 0.15rem rgba(255, 111, 0, 0.5) !important;
+        border-color: rgb(193, 84, 0) !important;
+      }
+
+#button-addon2{
+    background: linear-gradient(90deg, #ff4612, #ff9c2b);
+    color: white;
+    transition: 0.3s ease;
+}
+
+#button-addon2:hover{
+    background: linear-gradient(90deg, #dd3e12, #da8525);
+    color: rgb(228, 228, 228);
+}
+
+    footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ff4612, #ff9c2b );
+  color: white !important;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
 }

@@ -20,6 +20,11 @@ if (usuarioCorrente.role === 'adm'){
 
     document.getElementById("liPerfil").innerHTML = visualPerfil;
 
+        let visualEstoque = '';
+    visualEstoque = `<a style="text-decoration: none;" class="btn btn-estoque" href="estoque.html">Estoque</a></a>`
+
+    document.getElementById("liEstoque").innerHTML = visualEstoque;
+
           
 
 
@@ -28,7 +33,7 @@ if (usuarioCorrente.role === 'adm'){
 
 };
 
-if (usuarioCorrente.role === 'funcionario' || usuarioCorrente.role === 'adm'){ 
+if (usuarioCorrente.role === 'funcionario'){ 
     const isLogado = true;
     console.log(isLogado);
     let visualLogin = '';
@@ -37,7 +42,7 @@ if (usuarioCorrente.role === 'funcionario' || usuarioCorrente.role === 'adm'){
     document.getElementById("liLogin").innerHTML = visualLogin;
 
     let visualEstoque = '';
-    visualEstoque = `<a style="text-decoration: none;" class="btn btn-adm" href="estoque.html">Estoque</a></a>`
+    visualEstoque = `<a style="text-decoration: none;" class="btn btn-estoque" href="estoque.html">Estoque</a></a>`
 
     document.getElementById("liEstoque").innerHTML = visualEstoque;
 

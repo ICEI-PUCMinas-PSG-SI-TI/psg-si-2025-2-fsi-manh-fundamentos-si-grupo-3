@@ -2,10 +2,6 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let desconto = 0;
 
 function adicionarAoCarrinho(item) {
-    if(!usuarioCorrente){
-    alert("Faça login para adicionar itens ao carrinho.");
-    return;
-  }
     const nome = item.nome;
     const preco = item.preco || 0;
     const img = item.img;
@@ -137,10 +133,6 @@ function finalizarCompra() {
         alert("Carrinho vazio.");
         return;
     }
-  if(!usuarioCorrente){
-    alert("Faça login para efetuar o pedido.");
-    return;
-  }
 
     descontarEstoque(carrinho); 
 

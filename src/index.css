@@ -219,6 +219,24 @@
   color: #fff;
 }
 
+.btn-estoque {
+  position: absolute;
+  right: 280px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-estoque:hover {
+  background: #222;
+  text-decoration: none;
+  color: #fff;
+}
+
 .cart-container {
   display: flex;
   justify-content: flex-end;
@@ -451,6 +469,20 @@
       }
     }
 
+    footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ff4612, #ff9c2b );
+  color: white !important;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
 @media(max-width:768px){
   .topbar{
     padding:10px 12px;
@@ -475,6 +507,12 @@
     font-size:14px;
   }
     .btn-adm{
+    position: static;
+    margin-top:8px;
+    padding:6px 12px;
+    font-size:14px;
+  }
+      .btn-estoque{
     position: static;
     margin-top:8px;
     padding:6px 12px;

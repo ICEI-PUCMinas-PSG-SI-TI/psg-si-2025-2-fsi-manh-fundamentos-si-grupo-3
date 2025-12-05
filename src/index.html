@@ -74,6 +74,7 @@
     <div id="botoes">
       <div id="liLogin"> <a href="login.html" class="btn-login" onclick="apagaUsuarioCorrente()">Login </a></div>
       <div id="liPerfil"></div>
+      <div id="liEstoque"></div>
     </div>
     
 
@@ -91,17 +92,6 @@
       <img src="imgs/carrinho.png" alt="Carrinho" class="cart-icon">
     </a>
   </div>
-
-
-  <div class="delivery-box">
-    <i>📍</i>
-    <input id="addressInput" type="text" placeholder="Digite seu endereço para entrega..." autocomplete="off"
-      spellcheck="false" />
-  </div>
-
-  <p id="deliveryMsg" class="delivery-msg"></p>
-
-
 
   <main class="site-container">
 
@@ -143,26 +133,83 @@
   </div>
 
   <footer class="site-footer">
-    Saboreie
+    <p>&copy; 2025 Saboreie | Todos os direitos reservados.</p>
   </footer>
 
 
   <script>
     const dados = {
       menu: [
-        { nome: "Feijoada", estrelas: 5, img: "imgs/feijoada.webp" },
-        { nome: "Picanha", estrelas: 5, img: "imgs/picanha.webp" },
-        { nome: "Pizza", estrelas: 4, img: "imgs/pizza.webp  " }
-      ],
+{ 
+    nome: "Feijoada",
+    estrelas: 5,
+    preco: 19.90,
+    img: "imgs/feijoada.webp",
+    ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+  },
+  { nome: "Picanha", estrelas: 5, img: "imgs/picanha.webp", preco: 74.90,
+    ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+  },
+  { nome: "Pizza", estrelas: 4, img: "imgs/pizza.webp", preco: 49.90,
+    ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+  }
+],
+    
       populares: [
-        { nome: "Coxinha de Frango", estrelas: 5, img: "imgs/coxinha.webp" },
-        { nome: "Pastel de Carne", estrelas: 4, img: "imgs/paste.webp" },
-        { nome: "Moqueca de Peixe", estrelas: 5, img: "imgs/moqueca.jpg" }
+        
+        { nome: "Coxinha de Frango", estrelas: 5, img: "imgs/coxinha.webp", preco: 3.90,
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+         },
+        { nome: "Pastel de Carne", estrelas: 4, img: "imgs/paste.webp", preco: 4.90,
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]},
+        { nome: "Moqueca de Peixe", estrelas: 5, img: "imgs/moqueca.jpg", preco: 34.90,
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]}
       ],
       promocoes: [
-        { nome: "Salmão Grelhado", estrelas: 5, img: "imgs/salmao.jpg" },
-        { nome: "Brigadeiro Gourmet", estrelas: 5, img: "imgs/brigadeiro.jpg" },
-        { nome: "Bowl de Açaí", estrelas: 4, img: "imgs/açai.jpg" }
+                { nome: "Salmão Grelhado", estrelas: 5, img: "imgs/salmao.jpg", preco: 32.90,
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]},
+        { nome: "Brigadeiro Gourmet", estrelas: 5, img: "imgs/brigadeiro.jpg", preco: 4.90, 
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+         },
+        { nome: "Bowl de Açaí", estrelas: 4, img: "imgs/açai.jpg", preco: 16.90,
+          ingredientes: [
+      { id: 1, quantidade: 0.5 }, 
+      { id: 2, quantidade: 0.3 },
+      { id: 3, quantidade: 0.2 }
+    ]
+        }
       ]
     };
 
@@ -182,8 +229,7 @@
         <div class="stars">${starStr(item.estrelas)}</div>
         <div class="food-meta">
           <div class="price">R$ ${(item.preco || 0).toFixed(2)}</div>
-          <button class="botao-adicionar" onclick="adicionarAoCarrinho('${item.nome}', ${item.preco || 0}, '${item.img}')">
-            <img src="imgs/carrinho.png" alt="Adicionar ao Carrinho">
+          <button class="botao-adicionar" onclick='adicionarAoCarrinho(${JSON.stringify(item)})'">            <img src="imgs/carrinho.png" alt="Adicionar ao Carrinho">
           </button>
         </div>
       </div>
