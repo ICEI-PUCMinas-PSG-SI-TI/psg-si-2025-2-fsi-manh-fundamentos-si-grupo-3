@@ -57,13 +57,34 @@ Legenda: 🟢 Concluído | 🟡 Em andamento | 🔴 Não iniciado
 
 #### 5.3.2 Tela de login
 **Descrição:** Permite acesso de usuários registrados.  
-[`Tela de login`](images/)
+<img src="images/Captura de tela 2025-12-05 191744.png">
+<img src="images/Captura de tela 2025-12-05 191829.png">
+<img src="images/Captura de tela 2025-12-05 191850.png">
 
 ---
 
-#### 5.3.3 Tela de cadastro de produto
+#### 5.3.3 Tela da home
 **Descrição:** Formulário para inserir novos produtos no estoque.  
-[`Tela de cadastro`](images/)
+<img src="images/">
+
+---
+
+#### 5.3.4 Tela de finalização de compra
+**Descrição:** Formulário para inserir novos produtos no estoque.  
+<img src="images/">
+
+---
+
+#### 5.3.5 Tela de cadastro de produto
+**Descrição:** Formulário para inserir novos produtos no estoque.  
+<img src="images/">
+
+---
+
+#### 5.3.6 Tela do administrador
+**Descrição:** Formulário para inserir novos produtos no estoque.  
+<img src="images/">
+
 
 ---
 
@@ -77,6 +98,7 @@ Legenda: 🟢 Concluído | 🟡 Em andamento | 🔴 Não iniciado
 3. Descrever brevemente as funcionalidades implementadas ou mudanças feitas desde a última atualização.
 
 📌 **Objetivo**: Esta seção deve permitir que o professor visualize rapidamente **o que já foi entregue, o que está em andamento e o que ainda falta desenvolver**, garantindo acompanhamento eficaz do projeto.
+
 
 
 
