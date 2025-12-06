@@ -17,7 +17,7 @@
 
 ## Slides
 
-<span style="color:red">Pré-requisitos: <a href="Fundamentos de SIgrupo3.pdf"> Projeto da Solução</a></span>
+<span style="color:red">Pré-requisitos: <a href="Fundamentos de SIgrupo3.pdf"> PDF com slides</a></span>
 
 ## Vídeo
 
